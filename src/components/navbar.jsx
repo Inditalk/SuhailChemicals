@@ -11,6 +11,11 @@ import InfoIcon from "@material-ui/icons/Info";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
+import Home from "./home";
+import About from "./about";
+import Contact from "./contact";
+import Gallery from "./gallery"
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -48,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: "100%",
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
+    backgroundColor: "whitesmoke"
   },
   iconStyle: {},
 }));
@@ -62,8 +68,8 @@ export default function ScrollableTabsButtonForce() {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" color="default" style={{}}>
+    <div className={classes.root} >
+      <AppBar position="static" color="default" style={{backgroundColor:"lightsteelblue"}}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -84,16 +90,16 @@ export default function ScrollableTabsButtonForce() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Home
+        <Home/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Gallery
+        <Gallery/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Contact
+        <Contact/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Info
+        <About/>
       </TabPanel>
     </div>
   );
